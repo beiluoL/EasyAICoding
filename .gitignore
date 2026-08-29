@@ -1,0 +1,42 @@
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+dist/
+build/
+coverage/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Secrets — 永远不要提交密钥
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*
+secret*
+token*
+
+# Java build output
+target/
+
+# Local verification artifacts
+local-verification/
+tmp/
+
+# GitHub Pages build output
+_site/

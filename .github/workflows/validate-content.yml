@@ -1,0 +1,53 @@
+name: Validate Content
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check required files
+        run: |
+          required=(
+            "README.md"
+            "LICENSE"
+            "CONTRIBUTING.md"
+            "CODE_OF_CONDUCT.md"
+            "SECURITY.md"
+            "SUPPORT.md"
+            "CHANGELOG.md"
+            "AGENTS.md"
+            ".github/PULL_REQUEST_TEMPLATE.md"
+            "docs/getting-started/README.md"
+            "docs/roadmap/README.md"
+            "docs/concepts/README.md"
+            "docs/tools/README.md"
+            "prompts/README.md"
+            "cases/README.md"
+            "debugging/README.md"
+            "templates/README.md"
+            "tutorials/README.md"
+          )
+          missing=0
+          for file in "${required[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "::error::Missing required file: $file"
+              missing=1
+            fi
+          done
+          exit "$missing"
+
+      - name: Check no placeholders for secrets left as real values
+        run: |
+          if rg -n --hidden --glob '!.git/**' --glob '!node_modules/**' \
+            '(sk-[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16}|-----BEGIN (RSA|OPENSSH|EC) PRIVATE KEY-----)' .; then
+            echo "::error::Possible secret committed. Please replace with placeholders."
+            exit 1
+          fi
+          echo "No obvious secrets found."

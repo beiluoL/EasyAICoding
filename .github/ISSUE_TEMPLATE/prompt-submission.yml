@@ -1,0 +1,61 @@
+name: 💬 Prompt Submission
+description: 提交一个新的高质量 Prompt
+title: "[Prompt] "
+labels: ["prompt"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你贡献 Prompt！请先阅读 [Prompt Library 说明](https://github.com/你的用户名/EasyAICoding/blob/main/prompts/README.md)。
+  - type: input
+    id: name
+    attributes:
+      label: Prompt Name
+      description: 这个 Prompt 叫什么？
+    validations:
+      required: true
+  - type: textarea
+    id: usecase
+    attributes:
+      label: Use Case（适用场景）
+      description: 什么时候用这条 Prompt？
+    validations:
+      required: true
+  - type: input
+    id: target
+    attributes:
+      label: Target User（目标用户）
+      description: 谁适合使用？
+    validations:
+      required: true
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Prompt 全文
+      description: 可以直接复制使用的完整 Prompt
+      render: markdown
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Result（预期结果）
+      description: 使用后应该得到什么？
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification（验证）
+      description: 你实际测试过吗？结果如何？如果没有，请写 Not Yet Verified。
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 确认
+      options:
+        - label: 这不是「帮我写代码」这类低价值 Prompt
+          required: true
+        - label: Prompt 中没有 API Key 或敏感信息
+          required: true

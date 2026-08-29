@@ -1,0 +1,68 @@
+name: 🎯 Case Submission
+description: 提交一个 Beginner Case（入门案例）
+title: "[Case] "
+labels: ["case", "beginner-friendly"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你分享案例！请先阅读 [Case 标准](https://github.com/你的用户名/EasyAICoding/blob/main/cases/README.md)。
+  - type: input
+    id: project
+    attributes:
+      label: 项目名称
+      description: 这个案例做什么？
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal（目标）
+      description: 这个案例最终要做出什么？
+    validations:
+      required: true
+  - type: input
+    id: audience
+    attributes:
+      label: 目标用户
+      description: 适合什么水平的人？
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps（步骤）
+      description: 一步一步怎么做？
+      placeholder: |
+        Step 1: ...
+        Step 2: ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Result（预期结果）
+      description: 每步完成或全部完成后，应该看到什么？
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification（验证）
+      description: 你实际运行验证了吗？结果如何？如果没有，请写 Not Yet Verified。
+    validations:
+      required: true
+  - type: textarea
+    id: prompts
+    attributes:
+      label: 使用的 Prompt
+      description: 案例中实际使用的 Prompt（可选，也可以放在 PR 中）
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 确认
+      options:
+        - label: 案例是真实的，我没有伪造验证结果
+          required: true
+        - label: 案例中没有 API Key、密码等敏感信息
+          required: true

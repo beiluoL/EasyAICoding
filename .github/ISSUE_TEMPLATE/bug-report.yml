@@ -1,0 +1,62 @@
+name: 🐛 Bug Report
+description: 报告内容错误、死链接、无法运行的步骤
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你报告问题！请尽量提供完整信息，方便我们复现和修复。
+  - type: textarea
+    id: what
+    attributes:
+      label: 问题描述
+      description: 哪里出了问题？你看到了什么？
+    validations:
+      required: true
+  - type: textarea
+    id: location
+    attributes:
+      label: 问题位置
+      description: 文件路径 + 链接或行号
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤
+      description: 你做了什么操作？
+      placeholder: |
+        1. 打开 ...
+        2. 点击 ...
+        3. 看到错误 ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期结果
+      description: 你期望看到什么？
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际结果
+      description: 你实际看到了什么？请附上完整错误信息。
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 环境信息
+      description: 操作系统、工具（Codex / Cursor / Claude Code 等）、版本
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 确认
+      options:
+        - label: 我已搜索过是否已有相同 Issue
+          required: true
+        - label: 我没有在内容中提交任何 API Key 或密码
+          required: true

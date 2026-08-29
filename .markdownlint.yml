@@ -1,0 +1,32 @@
+# EasyAICoding markdownlint 配置
+default: true
+
+# 允许长行：教程内容经常包含较长中文句子
+MD013:
+  line_length: 999
+
+# 允许重复标题：不同文件中的「如何运行」等标题会重复
+MD024:
+  siblings_only: true
+
+# 允许内联 HTML：教程中可能需要表格或细节标签
+MD033: false
+
+# 允许「？」「！」等标点结尾的标题
+MD026: false
+
+# 列表缩进要求放宽：避免中文列表被误报
+MD007:
+  indent: 4
+
+# 允许代码块中的中文
+MD040: false
+
+# 标题级别跳跃（h2 -> h4）允许
+MD001: false
+
+# 允许一个文件多个 top-level 标题
+MD025: false
+
+# 允许表格使用不同空格风格（模板表格常见）
+MD060: false
