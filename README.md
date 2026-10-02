@@ -1,36 +1,18 @@
-# EasyAICoding 🚀
+<div align="right">
+  <strong>简体中文</strong> · <a href="README.en.md">English</a>
+</div>
 
-## 让小白也能用 AI 做出自己的软件
+# EasyAICoding
 
-**把想法变成软件。**
+**面向零基础的 AI 编程入门指南：从一个想法出发，分步骤学习运行、调试、测试与发布自己的软件。**
 
-Build Your First Software with AI.
+[从这里开始](docs/getting-started/README.md) · [学习路线](docs/roadmap/README.md) · [调试指南](debugging/README.md)
 
-Turn Ideas into Software with AI.
+- 提供 Prompt（给 AI 的具体指令）、教程与入门案例入口。
+- 遇到报错时，学习复现问题、找原因、修改和重新验证。
+- 一次完成一个小任务；案例验证状态以对应文档为准。
 
----
-
-你不需要一开始就会编程。
-
-你只需要：
-
-有一个想法
-↓
-告诉 AI
-↓
-让 AI 帮你设计
-↓
-让 AI 帮你写代码
-↓
-运行
-↓
-Debug
-↓
-测试
-↓
-发布
-
-🎉 最终做出属于自己的软件。
+**技术栈 / 主题：** AI Coding · Prompts · Tutorials · Debugging · Testing · Deployment
 
 ---
 
